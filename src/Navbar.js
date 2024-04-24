@@ -1,26 +1,17 @@
 const Navbar = () => {
     return (
-        <nav className="Navbar">
-            <h1>the blog</h1>
-            <div className="links">
-                <a href="/">Home</a>
-                <a href="/create">New Blog</a>
-            </div>
-        </nav>
-
+      <nav className="navbar">
+        <h1>The Blog</h1>
+        <div className="links">
+          <a href="/">Home</a>
+          <a href="/create" style={{ 
+            color: 'white', 
+            backgroundColor: '#f1356d',
+            borderRadius: '8px' 
+          }}>New Blog</a>
+        </div>
+      </nav>
     );
-}
-
-const NavbarV2 = (props) => {
-    return (
-        <nav className="Navbar">
-            <h1>the blog</h1>
-            <div className="links">
-                {props.children}
-            </div>
-        </nav>
-
-    );
-}
-
-export {Navbar, NavbarV2};
+  }
+   
+  export default Navbar;

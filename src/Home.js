@@ -1,15 +1,9 @@
-const HomePage = () => {
+const Home = () => {
     return (
-        <div className="home">
-            <h2>Homepage</h2>
-        </div>
+      <div className="home">
+        <h2>Homepage</h2>
+      </div>
     );
-}
-
-const Footer = ()=>{
-return <div>
-    <p>powered by React</p>
-</div>
-}
-
-export {Footer, HomePage}
+  }
+   
+  export default Home;
