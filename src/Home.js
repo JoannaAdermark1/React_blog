@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Bloglist from "./Bloglist";
 
 const Home = () => {
@@ -14,10 +14,20 @@ const Home = () => {
     { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 },
   ]);
 
+  console.log("I'm getting executed")
+
+useEffect(()=>{
+  console.log("I'm getting executed every time a new blog gets added", blogs)
+})
   const handleClick = () => {
       setName('luigi');
       setAge(32)
       setJob('fullstack developer')
+  }
+
+  const addBlog=()=>{
+    const entry={ title: 'My blog entry', body: 'lorem ipsum...', author: 'mario', id: blogs.length+1 }
+    setBlogs(blogs.concat(entry));
   }
 
     return (
@@ -26,6 +36,7 @@ const Home = () => {
         <p>{ name } is { age } years old and { job }</p>
         <button onClick={handleClick}>click me </button>
         <Bloglist blogs={blogs} title="All Blogs"/>
+        <button onClick={_=>addBlog()}>Add blog entry</button>
       </div>
     );
   }
